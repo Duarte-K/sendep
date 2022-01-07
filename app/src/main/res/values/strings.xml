@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">Sendep</string>
-    <string name="consult">CONSULTAR CEP</string>
-    <string name="tracking">RASTREAR</string>
+    <string name="splashTitle">SENDEP</string>
+    <string name="consultTitle">CONSULTAR CEP</string>
+    <string name="trackingTitle">RASTREAR</string>
+    <string name="consultButton">Consultar</string>
+    <string name="trackingButton">Rastrear</string>
+    <string name="cep">Digite o CEP</string>
+    <string name="codeTrack">Digite o código de rastreamento</string>
+
+
 </resources>
