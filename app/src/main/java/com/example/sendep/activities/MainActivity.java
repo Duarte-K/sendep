@@ -3,8 +3,11 @@ package com.example.sendep.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -19,50 +22,32 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
-    private ImageView back;
+    private Button btnConsult, btnTracking;
+
     @SuppressLint("Range")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        btnConsult = findViewById(R.id.btn_consultHome);
+        btnTracking = findViewById(R.id.btn_trackHome);
 
-    }
-    public void retrofitConsultCep(){
 
-        ServiceInterfaceConsultCode service = ServiceGenerator.createService(ServiceInterfaceConsultCode.class);
-        /*Call<ConsultCodeResponseEnvelope> call = service.consultCode();
-
-        call.enqueue(new retrofit2.Callback<ConsultCodeResponseEnvelope>() {
+        btnConsult.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onResponse(Call<ConsultCodeResponseEnvelope> call, Response<ConsultCodeResponseEnvelope> response) {
-                //Verifica se de sucesso na chamada.
-                if (response.isSuccessful()) {
-
-                    ConsultCodeResponseEnvelope envelopeResponse = response.body();
-
-                    //verifica aqui se o corpo da resposta não é nulo
-                    if (envelopeResponse != null) {
-
-                    } else {
-                        //resposta nula
-                        Toast.makeText(getApplicationContext(),"Erro: resposta nula",Toast.LENGTH_LONG).show();
-                    }
-
-                } else {
-
-                    // segura os erros de requisição
-                    ResponseBody errorBody = response.errorBody();
-                    Log.e("Erro: ", " "+errorBody);
-
-
-
-                }
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ConsultCodeActivity.class);
+                startActivity(intent);
             }
+        });
 
+        btnTracking.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onFailure(Call<ConsultCodeResponseEnvelope> call, Throwable t) {
-
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), TrackingActivity.class);
+                startActivity(intent);
             }
-        });*/
+        });
+
     }
 }
