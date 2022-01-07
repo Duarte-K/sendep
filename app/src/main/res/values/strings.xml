@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Sendep</string>
+    <string name="consult">CONSULTAR CEP</string>
+    <string name="tracking">RASTREAR</string>
+</resources>
