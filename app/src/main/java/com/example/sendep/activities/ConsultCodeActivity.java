@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.example.sendep.R;
 import com.example.sendep.service.ServiceGenerator;
@@ -14,14 +17,32 @@ import com.example.sendep.utils.MaskEditUtil;
 
 public class ConsultCodeActivity extends AppCompatActivity {
     private EditText cep;
+    private Button btnConsult;
+    private ImageButton btnBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consult_code);
 
+        btnConsult = findViewById(R.id.btn_consult);
+        btnBack = findViewById(R.id.btn_backConsult);
         cep = findViewById(R.id.et_cep);
         //Adicionando máscara de CEP
         cep.addTextChangedListener(MaskEditUtil.mask(cep, MaskEditUtil.FORMAT_CEP));
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        btnConsult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
     }
 
