@@ -66,7 +66,7 @@
         android:id="@+id/textInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:textColorHint="@color/black"
         app:boxStrokeColor="@color/secondary"
         app:hintTextColor="@color/secondary"

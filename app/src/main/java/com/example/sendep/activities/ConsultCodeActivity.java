@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.sendep.R;
 import com.example.sendep.service.ServiceGenerator;
@@ -40,7 +41,11 @@ public class ConsultCodeActivity extends AppCompatActivity {
         btnConsult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if(isNetworkConnected()){
+                    
+                }else{
+                    Toast.makeText(getApplicationContext(), "Sem conexão à internet", Toast.LENGTH_LONG).show();
+                }
             }
         });
 

@@ -10,6 +10,8 @@
     <string name="cep">Digite o CEP</string>
     <string name="version">Versão</string>
     <string name="codeTrack">Digite o código de rastreamento</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
