@@ -1,5 +1,6 @@
 package com.example.sendep.service;
 
+import com.example.sendep.model.request.ConsultCodeRequestEnvelope;
 import com.example.sendep.model.response.ConsultCodeResponseEnvelope;
 
 import retrofit2.Call;
@@ -13,6 +14,6 @@ public interface ServiceInterfaceConsultCode {
             "Accept-Charset: utf-8"
     })
 
-    @POST("")
-    Call<ConsultCodeResponseEnvelope> consultCode(@Body ConsultCodeResponseEnvelope body);
+    @POST("AtendeCliente")
+    Call<ConsultCodeResponseEnvelope> consultCode(@Body ConsultCodeRequestEnvelope body);
 }

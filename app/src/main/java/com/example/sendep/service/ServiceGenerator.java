@@ -31,7 +31,7 @@ public class ServiceGenerator {
 
        Retrofit retrofit =  new Retrofit.Builder()
                .addConverterFactory(SimpleXmlConverterFactory.create(serializer))
-               .baseUrl("http://www.webservicex.net/")
+               .baseUrl("https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/")
                .client(okHttpClient)
                .build();
 

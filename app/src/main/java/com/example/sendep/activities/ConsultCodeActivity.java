@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,12 +13,21 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.sendep.R;
+import com.example.sendep.model.request.ConsultCodeRequestBody;
+import com.example.sendep.model.request.ConsultCodeRequestData;
+import com.example.sendep.model.request.ConsultCodeRequestEnvelope;
+import com.example.sendep.model.response.ConsultCodeResponseEnvelope;
 import com.example.sendep.service.ServiceGenerator;
 import com.example.sendep.service.ServiceInterfaceConsultCode;
 import com.example.sendep.utils.MaskEditUtil;
 
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Response;
+
 public class ConsultCodeActivity extends AppCompatActivity {
     private EditText cep;
+    private String c;
     private Button btnConsult;
     private ImageButton btnBack;
     @Override
@@ -31,6 +41,8 @@ public class ConsultCodeActivity extends AppCompatActivity {
         //Adicionando máscara de CEP
         cep.addTextChangedListener(MaskEditUtil.mask(cep, MaskEditUtil.FORMAT_CEP));
 
+        c = cep.getText().toString();
+
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,7 +54,8 @@ public class ConsultCodeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(isNetworkConnected()){
-                    
+                    Toast.makeText(getApplicationContext(), "Conectado", Toast.LENGTH_LONG).show();
+                    retrofitConsultCep(c);
                 }else{
                     Toast.makeText(getApplicationContext(), "Sem conexão à internet", Toast.LENGTH_LONG).show();
                 }
@@ -51,10 +64,21 @@ public class ConsultCodeActivity extends AppCompatActivity {
 
     }
 
-    public void retrofitConsultCep(){
+
+    public void retrofitConsultCep(String code){
+
+        ConsultCodeRequestEnvelope envelope = new ConsultCodeRequestEnvelope();
+        ConsultCodeRequestData data = new ConsultCodeRequestData();
+        ConsultCodeRequestBody body = new ConsultCodeRequestBody();
+
+        data.setCep(code);
+
+        body.setConsultCodeRequestData(data);
+
+        envelope.setBody(body);
 
         ServiceInterfaceConsultCode service = ServiceGenerator.createService(ServiceInterfaceConsultCode.class);
-        /*Call<ConsultCodeResponseEnvelope> call = service.consultCode();
+        Call<ConsultCodeResponseEnvelope> call = service.consultCode(envelope);
 
         call.enqueue(new retrofit2.Callback<ConsultCodeResponseEnvelope>() {
             @Override
@@ -83,7 +107,7 @@ public class ConsultCodeActivity extends AppCompatActivity {
             public void onFailure(Call<ConsultCodeResponseEnvelope> call, Throwable t) {
 
             }
-        });*/
+        });
     }
 
     //Método para verificar se tem acesso a internet
