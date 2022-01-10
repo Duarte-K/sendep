@@ -7,9 +7,8 @@ import org.simpleframework.xml.Root;
 
 @Root(name = "soapenv:Envelope")
 @NamespaceList({
-        @Namespace( prefix = "xsi", reference = "http://www.w3.org/2001/XMLSchema-instance"),
-        @Namespace( prefix = "xsd", reference = "http://www.w3.org/2001/XMLSchema"),
-        @Namespace( prefix = "soap12", reference = "http://www.w3.org/2003/05/soap-envelope")
+        @Namespace( prefix = "soapenv", reference = "http://schemas.xmlsoap.org/soap/envelope/"),
+        @Namespace( prefix = "cli", reference = "http://cliente.bean.master.sigep.bsb.correios.com.br/")
 })
 
 public class ConsultCodeRequestEnvelope {
