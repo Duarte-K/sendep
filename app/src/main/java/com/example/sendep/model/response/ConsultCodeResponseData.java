@@ -6,7 +6,7 @@ import org.simpleframework.xml.Root;
 public class ConsultCodeResponseData {
 
     @Root(name = "ns2:consultaCEPResponse", strict = false)
-    @Namespace(reference = "ns2=\"http://cliente.bean.master.sigep.bsb.correios.com.br/")
+    @Namespace(reference = "http://cliente.bean.master.sigep.bsb.correios.com.br/")
 
     private String bairro, cep, cidade, end, uf;
 

@@ -27,7 +27,6 @@ import retrofit2.Response;
 
 public class ConsultCodeActivity extends AppCompatActivity {
     private EditText cep;
-    private String c;
     private Button btnConsult;
     private ImageButton btnBack;
     @Override
@@ -41,8 +40,6 @@ public class ConsultCodeActivity extends AppCompatActivity {
         //Adicionando máscara de CEP
         cep.addTextChangedListener(MaskEditUtil.mask(cep, MaskEditUtil.FORMAT_CEP));
 
-        c = cep.getText().toString();
-
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,7 +52,7 @@ public class ConsultCodeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(isNetworkConnected()){
                     Toast.makeText(getApplicationContext(), "Conectado", Toast.LENGTH_LONG).show();
-                    retrofitConsultCep(c);
+                    retrofitConsultCep(cep.getText().toString());
                 }else{
                     Toast.makeText(getApplicationContext(), "Sem conexão à internet", Toast.LENGTH_LONG).show();
                 }
