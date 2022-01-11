@@ -9,6 +9,16 @@
     <string name="trackingTitle">Rastreamento</string>
     <string name="cep">Digite o CEP</string>
     <string name="version">Versão</string>
+    <string name="cepExample">CEP</string>
+    <string name="cepExampleText">00000-000</string>
+    <string name="bairroExample">Bairro</string>
+    <string name="bairroExampleText">Aldeota</string>
+    <string name="cidadeExample">Cidade</string>
+    <string name="cidadeExampleText">Fortaleza</string>
+    <string name="ufExample">UF</string>
+    <string name="ufExampleText">CE</string>
+    <string name="endExample">Endereço</string>
+    <string name="endExampleText">Rua haha</string>
     <string name="codeTrack">Digite o código de rastreamento</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

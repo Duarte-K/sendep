@@ -6,7 +6,7 @@ import org.simpleframework.xml.Root;
 @Root(name = "soap:Body", strict = false)
 
 public class ConsultCodeResponseBody {
-    @Element(name = "ns2:consultaCEPResponse",required = false)
+    @Element(name = "consultaCEPResponse",required = false)
     private ConsultCodeResponseData consultCodeResponseData;
 
     public ConsultCodeResponseData getConsultCodeResponseData() {

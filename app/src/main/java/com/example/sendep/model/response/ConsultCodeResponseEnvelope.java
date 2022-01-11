@@ -10,7 +10,6 @@ import org.simpleframework.xml.Root;
 @Root(name = "soap:Envelope")
 @NamespaceList({
         @Namespace( prefix = "soap", reference = "http://schemas.xmlsoap.org/soap/envelope/"),
-        @Namespace( prefix = "ns2", reference = "http://cliente.bean.master.sigep.bsb.correios.com.br/")
 })
 
 public class ConsultCodeResponseEnvelope {

@@ -16,7 +16,10 @@ import com.example.sendep.R;
 import com.example.sendep.model.request.ConsultCodeRequestBody;
 import com.example.sendep.model.request.ConsultCodeRequestData;
 import com.example.sendep.model.request.ConsultCodeRequestEnvelope;
+import com.example.sendep.model.response.ConsultCodeResponseBody;
+import com.example.sendep.model.response.ConsultCodeResponseData;
 import com.example.sendep.model.response.ConsultCodeResponseEnvelope;
+import com.example.sendep.model.response.ConsultCodeResponseReturn;
 import com.example.sendep.service.ServiceGenerator;
 import com.example.sendep.service.ServiceInterfaceConsultCode;
 import com.example.sendep.utils.MaskEditUtil;
@@ -74,6 +77,20 @@ public class ConsultCodeActivity extends AppCompatActivity {
 
         envelope.setBody(body);
 
+        /*ConsultCodeResponseEnvelope envelope = new ConsultCodeResponseEnvelope();
+        ConsultCodeResponseReturn ret = new ConsultCodeResponseReturn();
+        ConsultCodeResponseData data = new ConsultCodeResponseData();
+        ConsultCodeResponseBody body = new ConsultCodeResponseBody();
+        ret.setCep("60337-380");
+        ret.setComplemento2("haha");
+        ret.setBairro("Jurema");
+        ret.setCidade("Fortaleza");
+        ret.setUf("CE");
+        ret.setEnd("Rua blabla");
+        data.setConsultCodeResponseReturn(ret);
+        body.setConsultCodeResponseData(data);
+        envelope.setBody(body);*/
+
         ServiceInterfaceConsultCode service = ServiceGenerator.createService(ServiceInterfaceConsultCode.class);
         Call<ConsultCodeResponseEnvelope> call = service.consultCode(envelope);
 
@@ -86,8 +103,8 @@ public class ConsultCodeActivity extends AppCompatActivity {
                     ConsultCodeResponseEnvelope envelopeResponse = response.body();
 
                     //verifica aqui se o corpo da resposta não é nulo
-                    if (envelopeResponse != null) {
-
+                    if (envelopeResponse.getBody() != null) {
+                        Toast.makeText(getApplicationContext(), "fafa"+envelopeResponse.getBody().getConsultCodeResponseData().getConsultCodeResponseReturn().getCep(), Toast.LENGTH_SHORT).show();
                     } else {
                         //resposta nula
                         Toast.makeText(getApplicationContext(),"Erro: resposta nula",Toast.LENGTH_LONG).show();
@@ -96,7 +113,8 @@ public class ConsultCodeActivity extends AppCompatActivity {
                 } else {
                     // segura os erros de requisição
                     ResponseBody errorBody = response.errorBody();
-                    Log.e("Erro: ", " "+errorBody);
+                    Log.e("Erroaa: ", " "+errorBody);
+                    Toast.makeText(getApplicationContext(),"Erro na chamada do servidor",Toast.LENGTH_LONG).show();
                 }
             }
 
