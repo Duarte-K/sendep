@@ -5,21 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.example.sendep.R;
-import com.example.sendep.model.response.ConsultCodeResponseEnvelope;
-import com.example.sendep.service.ServiceGenerator;
-import com.example.sendep.service.ServiceInterfaceConsultCode;
-
-import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     private Button btnConsult, btnTracking;

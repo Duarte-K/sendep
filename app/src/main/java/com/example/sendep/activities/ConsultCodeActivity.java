@@ -13,13 +13,10 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.sendep.R;
-import com.example.sendep.model.request.ConsultCodeRequestBody;
-import com.example.sendep.model.request.ConsultCodeRequestData;
-import com.example.sendep.model.request.ConsultCodeRequestEnvelope;
-import com.example.sendep.model.response.ConsultCodeResponseBody;
-import com.example.sendep.model.response.ConsultCodeResponseData;
-import com.example.sendep.model.response.ConsultCodeResponseEnvelope;
-import com.example.sendep.model.response.ConsultCodeResponseReturn;
+import com.example.sendep.model.request.consult.ConsultCodeRequestBody;
+import com.example.sendep.model.request.consult.ConsultCodeRequestData;
+import com.example.sendep.model.request.consult.ConsultCodeRequestEnvelope;
+import com.example.sendep.model.response.consult.ConsultCodeResponseEnvelope;
 import com.example.sendep.service.ServiceGenerator;
 import com.example.sendep.service.ServiceInterfaceConsultCode;
 import com.example.sendep.utils.MaskEditUtil;

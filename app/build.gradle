@@ -9,8 +9,8 @@ android {
         applicationId "com.example.sendep"
         minSdk 21
         targetSdk 31
-        versionCode 3
-        versionName "1.02.3"
+        versionCode 4
+        versionName "1.03.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -47,4 +47,6 @@ dependencies {
         exclude group: 'stax', module: 'stax'
         exclude group: 'xpp3', module: 'xpp3'
     }
+
+    implementation 'com.alexgilleran:icesoap:1.1.1'
 }

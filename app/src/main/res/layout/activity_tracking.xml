@@ -108,5 +108,6 @@
         android:text="@string/trackingButton"
         app:layout_constraintEnd_toStartOf="@+id/guideline14"
         app:layout_constraintStart_toStartOf="@+id/guideline13"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+        tools:ignore="TextContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

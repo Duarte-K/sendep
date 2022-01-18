@@ -2,13 +2,115 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".fragments.ConsultFragment" >
+    tools:context=".fragments.ConsultFragment">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txBairro_ex"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="@string/bairroExample"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tx_bairro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bairroExampleText"
+        android:textColor="@color/extra"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txCep_ex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cepExample"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/txCidade_ex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cidadeExample"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tx_cep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cepExampleText"
+            android:textColor="@color/extra"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tx_cidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cidadeExampleText"
+            android:textColor="@color/extra"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txEnd_ex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/endExample"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/txUf_ex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:text="@string/ufExample"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tx_end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/endExampleText"
+            android:textColor="@color/extra"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tx_uf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:text="@string/ufExampleText"
+            android:textColor="@color/extra"
+            android:textSize="16sp" />
+    </LinearLayout>
 </LinearLayout>

@@ -1,4 +1,6 @@
-package com.example.sendep.model.request;
+package com.example.sendep.model.request.consult;
+
+import com.example.sendep.model.request.consult.ConsultCodeRequestBody;
 
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;

@@ -1,7 +1,7 @@
 package com.example.sendep.service;
 
-import com.example.sendep.model.request.ConsultCodeRequestEnvelope;
-import com.example.sendep.model.response.ConsultCodeResponseEnvelope;
+import com.example.sendep.model.request.consult.ConsultCodeRequestEnvelope;
+import com.example.sendep.model.response.consult.ConsultCodeResponseEnvelope;
 
 import retrofit2.Call;
 import retrofit2.http.Body;

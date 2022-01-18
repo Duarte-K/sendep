@@ -1,4 +1,4 @@
-package com.example.sendep.model.response;
+package com.example.sendep.model.response.consult;
 
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
